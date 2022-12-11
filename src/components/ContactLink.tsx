@@ -1,7 +1,7 @@
 import { Link } from "@/config";
 import { Icon } from "@chakra-ui/react";
 import { FC } from "react";
-import { MotionLink } from "./MotionLink";
+import { MotionLink } from "./motion";
 
 const ContactLink: FC<Link> = ({ title, href, icon }) => (
   <MotionLink

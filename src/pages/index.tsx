@@ -4,21 +4,28 @@ import ContactLink from "@/components/ContactLink";
 import OtherLink from "@/components/OtherLink";
 import Header from "@/components/Header";
 import SEO from "@/components/Seo";
+import { MotionStack } from "@/components/motion";
 
 const Home = () => (
   <>
     <SEO />
-    <Flex bg="gray.800" align="center" justify="center">
-      <VStack
+    <Flex
+      bgGradient="linear(to-b, gray.800, gray.700)"
+      justify="center"
+      minHeight="100vh"
+      px={5}
+      py={10}
+    >
+      <MotionStack
         alignItems={"stretch"}
-        minHeight="100vh"
-        px={5}
-        py={10}
         color="white"
         textAlign={"center"}
         maxWidth={450}
         flex={1}
         gap={2}
+        initial={{ translateY: 10, opacity: 0 }}
+        animate={{ translateY: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
       >
         <Header />
         <HStack justifyContent={"center"}>
@@ -31,7 +38,7 @@ const Home = () => (
             <OtherLink key={link.href} {...link} />
           ))}
         </VStack>
-      </VStack>
+      </MotionStack>
     </Flex>
   </>
 );
