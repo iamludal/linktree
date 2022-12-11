@@ -5,7 +5,6 @@ import { MotionLink } from "./MotionLink";
 
 const OtherLink: FC<Link> = ({ title, href, icon }) => (
   <MotionLink
-    key={title}
     href={href}
     isExternal
     bg="gray.700"

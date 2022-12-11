@@ -5,7 +5,6 @@ import { MotionLink } from "./MotionLink";
 
 const ContactLink: FC<Link> = ({ title, href, icon }) => (
   <MotionLink
-    key={title}
     href={href}
     isExternal
     rounded="full"

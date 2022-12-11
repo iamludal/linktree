@@ -23,12 +23,12 @@ const Home = () => (
         <Header />
         <HStack justifyContent={"center"}>
           {CONTACT_LINKS.map(link => (
-            <ContactLink {...link} />
+            <ContactLink key={link.href} {...link} />
           ))}
         </HStack>
         <VStack as={UnorderedList} gap={2} alignItems="stretch">
           {OTHER_LINKS.map(link => (
-            <OtherLink {...link} />
+            <OtherLink key={link.href} {...link} />
           ))}
         </VStack>
       </VStack>
