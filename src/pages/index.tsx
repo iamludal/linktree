@@ -9,13 +9,7 @@ import { MotionStack } from "@/components/motion";
 const Home = () => (
   <>
     <SEO />
-    <Flex
-      bgGradient="linear(to-b, gray.800, gray.700)"
-      justify="center"
-      minHeight="100vh"
-      px={5}
-      py={10}
-    >
+    <Flex backgroundColor={"gray.800"} justify="center" minHeight="100vh" px={5} py={10}>
       <MotionStack
         alignItems={"stretch"}
         color="white"
