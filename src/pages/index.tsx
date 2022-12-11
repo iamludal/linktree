@@ -1,28 +1,13 @@
-import {
-  Flex,
-  Heading,
-  HStack,
-  Icon,
-  Image,
-  Link,
-  LinkProps,
-  Text,
-  UnorderedList,
-  VStack,
-} from "@chakra-ui/react";
-import Head from "next/head";
-import { user, contactLinks, otherLinks } from "@/config";
-import { motion } from "framer-motion";
-
-const MotionLink = motion<Omit<LinkProps, "transition">>(Link);
+import { Flex, HStack, UnorderedList, VStack } from "@chakra-ui/react";
+import { CONTACT_LINKS, OTHER_LINKS } from "@/config";
+import ContactLink from "@/components/ContactLink";
+import OtherLink from "@/components/OtherLink";
+import Header from "@/components/Header";
+import SEO from "@/components/Seo";
 
 const Home = () => (
   <>
-    <Head>
-      <title>{user.name}</title>
-      <meta name="description" content={user.bio} />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <SEO />
     <Flex bg="gray.800" align="center" justify="center">
       <VStack
         alignItems={"stretch"}
@@ -35,64 +20,15 @@ const Home = () => (
         flex={1}
         gap={2}
       >
-        <VStack>
-          <Image
-            src={"/logo.png"}
-            alt={user.name}
-            width={100}
-            height={100}
-            mb={3}
-          />
-          <Heading size="lg" mb={2}>
-            {user.name}
-          </Heading>
-          <Heading as="h2" size="md" color={"gray.300"} fontWeight="normal">
-            {user.bio}
-          </Heading>
-        </VStack>
+        <Header />
         <HStack justifyContent={"center"}>
-          {contactLinks.map((link) => (
-            <MotionLink
-              key={link.title}
-              href={link.href}
-              isExternal
-              rounded="full"
-              alignItems="center"
-              transitionDuration="0.1s"
-              _hover={{ background: "gray.700" }}
-              _active={{ background: "gray.700" }}
-              _focus={{ background: "gray.700" }}
-              display="flex"
-              p={3}
-              gap={2}
-            >
-              <Icon as={link.icon} boxSize={6} verticalAlign={"-.25em"} />
-            </MotionLink>
+          {CONTACT_LINKS.map(link => (
+            <ContactLink {...link} />
           ))}
         </HStack>
         <VStack as={UnorderedList} gap={2} alignItems="stretch">
-          {otherLinks.map((link) => (
-            <MotionLink
-              key={link.title}
-              href={link.href}
-              isExternal
-              bg="gray.700"
-              rounded={6}
-              display="grid"
-              gridTemplateColumns={"1fr 1fr 1fr"}
-              px={6}
-              py={4}
-              textAlign="center"
-              fontWeight={500}
-              _hover={{ background: "gray.600" }}
-              _active={{ background: "gray.600" }}
-              _focus={{ background: "gray.600" }}
-              whileHover={{ scale: [1, 1.05, 1.04] }}
-              transition={{ duration: 0.25 }}
-            >
-              <Icon as={link.icon} boxSize={6} />
-              <Text>{link.title}</Text>
-            </MotionLink>
+          {OTHER_LINKS.map(link => (
+            <OtherLink {...link} />
           ))}
         </VStack>
       </VStack>

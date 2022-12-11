@@ -9,19 +9,19 @@ import {
 import { MdArticle, MdMail } from "react-icons/md";
 import { IoIosPaper } from "react-icons/io";
 
-type Link = {
+export type Link = {
   title: string;
   href: string;
   icon: React.ComponentType;
 };
 
-export const user = {
+export const USER = {
   name: "Ludal 🚀",
   bio: "French junior DevOps engineer. 🇫🇷",
   email: "contact@iamludal.fr",
 };
 
-export const contactLinks: Link[] = [
+export const CONTACT_LINKS: Link[] = [
   {
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/iamludal/",
@@ -39,11 +39,11 @@ export const contactLinks: Link[] = [
   },
   {
     title: "Email",
-    href: `mailto:${user.email}`,
+    href: `mailto:${USER.email}`,
     icon: MdMail,
   },
 ];
-export const otherLinks: Link[] = [
+export const OTHER_LINKS: Link[] = [
   {
     title: "Website",
     href: "https://iamludal.fr",
