@@ -1,21 +1,22 @@
 import {
-  Box,
-  BoxProps,
   Flex,
   Heading,
+  HStack,
   Icon,
   Image,
+  Link,
   LinkBox,
   LinkOverlay,
-  SimpleGrid,
+  LinkProps,
+  Text,
   UnorderedList,
   VStack,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import { user, links } from "@/config";
+import { user, contactLinks, otherLinks } from "@/config";
 import { motion } from "framer-motion";
 
-const MotionBox = motion<Omit<BoxProps, "transition">>(Box);
+const MotionLink = motion<Omit<LinkProps, "transition">>(Link);
 
 const Home = () => (
   <>
@@ -28,13 +29,15 @@ const Home = () => (
       <VStack
         alignItems={"stretch"}
         minHeight="100vh"
-        p={5}
+        px={5}
+        py={10}
         color="white"
         textAlign={"center"}
         maxWidth={450}
         flex={1}
+        gap={2}
       >
-        <VStack m={5}>
+        <VStack>
           <Image
             src={"/logo.png"}
             alt={user.name}
@@ -49,29 +52,47 @@ const Home = () => (
             {user.bio}
           </Heading>
         </VStack>
+        <HStack justifyContent={"center"}>
+          {contactLinks.map((link) => (
+            <LinkBox
+              key={link.title}
+              rounded="full"
+              alignItems="center"
+              transitionDuration="0.1s"
+              _hover={{ background: "gray.700" }}
+              display="flex"
+              p={3}
+              gap={2}
+            >
+              <LinkOverlay href={link.href} isExternal>
+                <Icon as={link.icon} boxSize={6} verticalAlign={"-.25em"} />
+              </LinkOverlay>
+            </LinkBox>
+          ))}
+        </HStack>
         <VStack as={UnorderedList} gap={2} alignItems="stretch">
-          {links.map((link) => (
-            <MotionBox
+          {otherLinks.map((link) => (
+            <MotionLink
+              key={link.title}
+              href={link.href}
+              isExternal
+              bg="gray.700"
+              rounded={6}
+              display="grid"
+              gridTemplateColumns={"1fr 1fr 1fr"}
+              px={6}
+              py={4}
+              textAlign="center"
+              fontWeight={500}
+              _hover={{ background: "gray.600" }}
+              _active={{ background: "gray.600" }}
+              _focus={{ background: "gray.600" }}
               whileHover={{ scale: [1, 1.05, 1.04] }}
               transition={{ duration: 0.25 }}
             >
-              <LinkBox key={link.title}>
-                <SimpleGrid
-                  columns={3}
-                  py={4}
-                  px={6}
-                  bg="gray.700"
-                  rounded={6}
-                  textAlign="center"
-                  _hover={{ background: "gray.600" }}
-                >
-                  <Icon as={link.icon} boxSize={6} />
-                  <LinkOverlay href={link.href} isExternal fontWeight={"500"}>
-                    {link.title}
-                  </LinkOverlay>
-                </SimpleGrid>
-              </LinkBox>
-            </MotionBox>
+              <Icon as={link.icon} boxSize={6} />
+              <Text>{link.title}</Text>
+            </MotionLink>
           ))}
         </VStack>
       </VStack>
