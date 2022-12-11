@@ -3,7 +3,7 @@ import { CONTACT_LINKS, OTHER_LINKS } from "@/config";
 import ContactLink from "@/components/ContactLink";
 import OtherLink from "@/components/OtherLink";
 import Header from "@/components/Header";
-import SEO from "@/components/Seo";
+import SEO from "@/components/SEO";
 import { MotionStack } from "@/components/motion";
 
 const Home = () => (
