@@ -5,8 +5,6 @@ import {
   Icon,
   Image,
   Link,
-  LinkBox,
-  LinkOverlay,
   LinkProps,
   Text,
   UnorderedList,
@@ -54,20 +52,22 @@ const Home = () => (
         </VStack>
         <HStack justifyContent={"center"}>
           {contactLinks.map((link) => (
-            <LinkBox
+            <MotionLink
               key={link.title}
+              href={link.href}
+              isExternal
               rounded="full"
               alignItems="center"
               transitionDuration="0.1s"
               _hover={{ background: "gray.700" }}
+              _active={{ background: "gray.700" }}
+              _focus={{ background: "gray.700" }}
               display="flex"
               p={3}
               gap={2}
             >
-              <LinkOverlay href={link.href} isExternal>
-                <Icon as={link.icon} boxSize={6} verticalAlign={"-.25em"} />
-              </LinkOverlay>
-            </LinkBox>
+              <Icon as={link.icon} boxSize={6} verticalAlign={"-.25em"} />
+            </MotionLink>
           ))}
         </HStack>
         <VStack as={UnorderedList} gap={2} alignItems="stretch">
