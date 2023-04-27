@@ -7,13 +7,19 @@ and [Chakra UI](https://chakra-ui.com/).
 
 ### Setup
 
-1. Install dependencies
+1. Install pre-commit hooks:
+
+```bash
+pre-commit install --install-hooks -t pre-commit -t commit-msg
+```
+
+2. Install dependencies:
 
 ```bash
 yarn
 ```
 
-2. Run the development server
+3. Run the development server:
 
 ```bash
 yarn dev
