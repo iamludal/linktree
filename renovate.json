@@ -1,4 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>iamludal/portfolio:renovate"]
+  "extends": ["config:base"],
+  "labels": ["dependencies"],
+  "schedule": ["before 6am"],
+  "packageRules": [
+    {
+      "updateTypes": ["patch"],
+      "enabled": false
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "Dev Dependencies",
+      "automerge": true
+    }
+  ]
 }
