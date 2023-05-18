@@ -1,4 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>iamludal/portfolio"]
+  "extends": ["github>iamludal/portfolio:renovate"]
 }
