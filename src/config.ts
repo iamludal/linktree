@@ -4,7 +4,7 @@ import {
   FaGlobeAmericas,
   FaSkull,
   FaLinkedin,
-  FaTelegram,
+  FaDiscord,
 } from "react-icons/fa";
 import { MdArticle, MdMail } from "react-icons/md";
 import { IoIosPaper } from "react-icons/io";
@@ -33,9 +33,9 @@ export const CONTACT_LINKS: Link[] = [
     icon: FaTwitter,
   },
   {
-    title: "Telegram",
-    href: "https://t.me/iamludal",
-    icon: FaTelegram,
+    title: "Discord",
+    href: "https://discordapp.com/users/256769299954401280",
+    icon: FaDiscord,
   },
   {
     title: "Email",
