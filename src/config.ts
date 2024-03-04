@@ -5,6 +5,7 @@ import {
   FaSkull,
   FaLinkedin,
   FaDiscord,
+  FaPaypal,
 } from "react-icons/fa";
 import { MdArticle, MdMail } from "react-icons/md";
 import { IoIosPaper } from "react-icons/io";
@@ -68,5 +69,10 @@ export const OTHER_LINKS: Link[] = [
     title: "Root-Me",
     href: "https://www.root-me.org/iamludal",
     icon: FaSkull,
+  },
+  {
+    title: "PayPal",
+    href: "https://paypal.me/iamludal",
+    icon: FaPaypal,
   },
 ];
