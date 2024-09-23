@@ -18,7 +18,7 @@ export type Link = {
 
 export const USER = {
   name: "Ludal 🚀",
-  bio: "French junior DevOps engineer. 🇫🇷",
+  bio: "French DevOps engineer. 🇫🇷",
   email: "contact@iamludal.fr",
 };
 

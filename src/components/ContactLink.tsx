@@ -9,11 +9,11 @@ const ContactLink: FC<Link> = ({ title, href, icon }) => (
     isExternal
     rounded="full"
     alignItems="center"
-    transitionDuration="0.1s"
     title={title}
     _hover={{ background: "gray.700" }}
     _active={{ background: "gray.700" }}
     _focus={{ background: "gray.700" }}
+    whileHover={{ scale: 1.05 }}
     display="flex"
     p={3}
     gap={2}

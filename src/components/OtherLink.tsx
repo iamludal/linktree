@@ -18,8 +18,7 @@ const OtherLink: FC<Link> = ({ title, href, icon }) => (
     _hover={{ background: "gray.600" }}
     _active={{ background: "gray.600" }}
     _focus={{ background: "gray.600" }}
-    whileHover={{ scale: [1, 1.05, 1.04] }}
-    transition={{ duration: 0.25 }}
+    whileHover={{ scale: 1.05 }}
   >
     <Icon as={icon} boxSize={6} />
     <Text>{title}</Text>
