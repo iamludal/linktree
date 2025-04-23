@@ -1,5 +1,4 @@
 import {
-  FaTwitter,
   FaGithub,
   FaGlobeAmericas,
   FaSkull,
@@ -9,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { MdArticle, MdMail } from "react-icons/md";
 import { IoIosPaper } from "react-icons/io";
+import { FaBluesky } from "react-icons/fa6";
 
 export type Link = {
   title: string;
@@ -29,9 +29,9 @@ export const CONTACT_LINKS: Link[] = [
     icon: FaLinkedin,
   },
   {
-    title: "Twitter",
-    href: "https://twitter.com/iamludal",
-    icon: FaTwitter,
+    title: "Bluesky",
+    href: "https://bsky.app/profile/iamludal.fr",
+    icon: FaBluesky,
   },
   {
     title: "Discord",
