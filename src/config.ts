@@ -1,14 +1,7 @@
-import {
-  FaGithub,
-  FaGlobeAmericas,
-  FaSkull,
-  FaLinkedin,
-  FaDiscord,
-  FaPaypal,
-} from "react-icons/fa";
-import { MdArticle, MdMail } from "react-icons/md";
-import { IoIosPaper } from "react-icons/io";
+import { FaDiscord, FaGithub, FaGlobeAmericas, FaLinkedin, FaSkull } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
+import { IoIosPaper } from "react-icons/io";
+import { MdMail } from "react-icons/md";
 
 export type Link = {
   title: string;
@@ -61,18 +54,8 @@ export const OTHER_LINKS: Link[] = [
     icon: FaGithub,
   },
   {
-    title: "daily.dev",
-    href: "https://app.daily.dev/iamludal",
-    icon: MdArticle,
-  },
-  {
     title: "Root-Me",
     href: "https://www.root-me.org/iamludal",
     icon: FaSkull,
-  },
-  {
-    title: "PayPal",
-    href: "https://paypal.me/iamludal",
-    icon: FaPaypal,
   },
 ];
