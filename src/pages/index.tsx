@@ -1,6 +1,6 @@
 import { Flex, HStack, UnorderedList, VStack } from "@chakra-ui/react";
 import { CONTACT_LINKS, OTHER_LINKS } from "@/config";
-import ContactLink from "@/components/ContactLink";
+import ContactLinkType from "@/components/ContactLink";
 import OtherLink from "@/components/OtherLink";
 import Header from "@/components/Header";
 import SEO from "@/components/SEO";
@@ -16,7 +16,7 @@ const Home = () => (
         textAlign={"center"}
         maxWidth={450}
         flex={1}
-        gap={2}
+        gap={4}
         initial={{ translateY: 10, opacity: 0 }}
         animate={{ translateY: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -24,10 +24,10 @@ const Home = () => (
         <Header />
         <HStack justifyContent={"center"}>
           {CONTACT_LINKS.map(link => (
-            <ContactLink key={link.href} {...link} />
+            <ContactLinkType key={link.href} {...link} />
           ))}
         </HStack>
-        <VStack as={UnorderedList} gap={2} alignItems="stretch">
+        <VStack as={UnorderedList} gap={4} alignItems="stretch">
           {OTHER_LINKS.map(link => (
             <OtherLink key={link.href} {...link} />
           ))}
