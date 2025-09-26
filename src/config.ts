@@ -1,4 +1,4 @@
-import { FaDiscord, FaGithub, FaGlobeAmericas, FaLinkedin, FaSkull } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin, FaSkull } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
 import { IoIosPaper } from "react-icons/io";
 import { MdMail } from "react-icons/md";
@@ -38,11 +38,6 @@ export const CONTACT_LINKS: Link[] = [
   },
 ];
 export const OTHER_LINKS: Link[] = [
-  {
-    title: "Website",
-    href: "https://iamludal.fr",
-    icon: FaGlobeAmericas,
-  },
   {
     title: "Blog",
     href: "https://blog.iamludal.fr",
