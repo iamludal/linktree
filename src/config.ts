@@ -3,7 +3,7 @@ import { FaBluesky } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
 import github from "@/assets/github.png";
 import hashnode from "@/assets/hashnode.png";
-import rootMe from "@/assets/root-me.jpg";
+import rootMe from "@/assets/root-me.png";
 import { StaticImageData } from "next/image";
 
 type BaseLinkType = {
