@@ -1,9 +1,9 @@
-import { Link } from "@/config";
+import { ContactLinkType } from "@/config";
 import { Icon } from "@chakra-ui/react";
 import { FC } from "react";
 import { MotionLink } from "./motion";
 
-const ContactLink: FC<Link> = ({ title, href, icon }) => (
+const ContactLink: FC<ContactLinkType> = ({ title, href, icon }) => (
   <MotionLink
     href={href}
     isExternal
