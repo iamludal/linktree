@@ -1,10 +1,13 @@
 import { USER } from "@/config";
-import { Box, Heading, Image, VStack } from "@chakra-ui/react";
+import { Box, Heading, VStack } from "@chakra-ui/react";
+import NextImage from "next/image";
 import type { FC } from "react";
 
 const Header: FC = () => (
   <VStack>
-    <Image src={"/logo.png"} alt={USER.name} width={100} height={100} mb={3} />
+    <Box width={100} height={100} mb={3}>
+      <NextImage src={USER.avatar} alt="Avatar" />
+    </Box>
     <Heading size="lg" mb={2} fontWeight={400}>
       Salut, moi c'est{" "}
       <Box as="span" fontWeight={700}>

@@ -5,6 +5,7 @@ import github from "@/assets/github.png";
 import hashnode from "@/assets/hashnode.png";
 import rootMe from "@/assets/root-me.png";
 import { StaticImageData } from "next/image";
+import logo from "./assets/logo.png";
 
 type BaseLinkType = {
   title: string;
@@ -24,6 +25,7 @@ export const USER = {
   name: "Ludal",
   bio: "DevOps passionné d'automatisation, d'observabilité et de cybersécurité. 🇫🇷",
   email: "contact@iamludal.fr",
+  avatar: logo,
 };
 
 export const CONTACT_LINKS: ContactLinkType[] = [
