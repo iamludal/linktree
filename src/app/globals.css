@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-fade-in-slide: fade-in-slide 0.5s ease-in forwards;
+
+  @keyframes fade-in-slide {
+    from {
+      opacity: 0.01;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

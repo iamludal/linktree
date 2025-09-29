@@ -1,35 +1,30 @@
-import type { OtherLinkType } from "@/config";
-import { Icon, Text, VStack } from "@chakra-ui/react";
-import type { FC } from "react";
-import { MotionLink } from "./motion";
-import { MdArrowOutward } from "react-icons/md";
 import Image from "next/image";
+import { FC } from "react";
+import { MdArrowOutward } from "react-icons/md";
 
-const OtherLink: FC<OtherLinkType> = ({ title, href, image, description }) => (
-  <MotionLink
+type Props = {
+  title: string;
+  href: string;
+  image: string;
+  description: string;
+};
+
+const OtherLink: FC<Props> = ({ title, href, image, description }) => (
+  <a
     href={href}
-    isExternal
-    bg="gray.700"
-    rounded={8}
-    display="grid"
-    gridTemplateColumns={"auto 1fr auto"}
-    gridGap={6}
-    alignItems={"center"}
-    px={6}
-    py={4}
-    textAlign={"left"}
-    _hover={{ background: "gray.600" }}
-    _active={{ background: "gray.600" }}
-    _focus={{ background: "gray.600" }}
-    whileHover={{ scale: 1.03 }}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-6 outline-none hover:scale-[1.02] px-6 py-4
+                transition-all rounded-lg bg-gray-800 hover:bg-gray-700 focus:bg-gray-700
+                active:shadow-md focus:ring-3 ring-sky-500/50 ease-in-out"
   >
-    <Image src={image} alt={title} style={{ width: 52, height: 52, borderRadius: 12 }} />
-    <VStack alignItems={"start"} gap={0}>
-      <Text fontWeight={600}>{title}</Text>
-      <Text opacity={0.6}>{description ?? "blank"}</Text>
-    </VStack>
-    <Icon as={MdArrowOutward} boxSize={5} opacity={0.5} />
-  </MotionLink>
+    <Image src={image} alt={title} width={52} height={52} className="rounded-lg" />
+    <div className="flex-1">
+      <h2 className="text-lg font-medium">{title}</h2>
+      <p className="text-md opacity-60 font-light">{description}</p>
+    </div>
+    <MdArrowOutward className="opacity-50 text-lg" />
+  </a>
 );
 
 export default OtherLink;
