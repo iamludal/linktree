@@ -1,7 +1,7 @@
 ## Linktree 🌲
 
 My simple [Linktree](https://linktr.ee/) clone built with [Next.js](https://nextjs.org/) 
-and [Chakra UI](https://chakra-ui.com/).
+and [Tailwind CSS](https://tailwindcss.com/).
 
 ![Preview](docs/preview.gif)
 
@@ -16,13 +16,13 @@ pre-commit install --install-hooks -t pre-commit -t commit-msg
 2. Install dependencies:
 
 ```bash
-yarn
+bun install
 ```
 
 3. Run the development server:
 
 ```bash
-yarn dev
+bun dev
 ```
 
 The app will be available at [http://localhost:3000](http://localhost:3000).
