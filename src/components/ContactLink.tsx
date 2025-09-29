@@ -1,25 +1,23 @@
-import { ContactLinkType } from "@/config";
-import { Icon } from "@chakra-ui/react";
 import { FC } from "react";
-import { MotionLink } from "./motion";
 
-const ContactLink: FC<ContactLinkType> = ({ title, href, icon }) => (
-  <MotionLink
+type Props = {
+  title: string;
+  href: string;
+  icon: React.ComponentType;
+};
+
+const ContactLink: FC<Props> = ({ title, href, icon: Icon }) => (
+  <a
     href={href}
-    isExternal
-    rounded="full"
-    alignItems="center"
-    title={title}
-    _hover={{ background: "gray.700" }}
-    _active={{ background: "gray.700" }}
-    _focus={{ background: "gray.700" }}
-    whileHover={{ scale: 1.05 }}
-    display="flex"
-    p={3}
-    gap={2}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={title}
+    className="text-2xl block p-4 outline-none hover:scale-105 hover:bg-gray-800
+        active:shadow-md focus:bg-gray-800 focus:ring-3 ring-sky-500/50
+        transition-all transition-background rounded-full ease-in-out"
   >
-    <Icon as={icon} boxSize={6} verticalAlign={"-.25em"} />
-  </MotionLink>
+    <Icon />
+  </a>
 );
 
 export default ContactLink;
