@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
-  redirects() {
+  async redirects() {
     return [
       {
         source: '/:path(.*)',
