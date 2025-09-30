@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   redirects() {
     return [
       {
-        source: '/:path*',
+        source: '/:path(.*)',
         destination: '/',
         permanent: true,
       }
